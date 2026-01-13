@@ -1,0 +1,134 @@
+-- [[ 🔐 TITAN ELITE PROTECTION V4.3 ]] --
+-- [[ OWNER: DEV GERALD ]] --
+
+-- [[ 🛑 ANTI-DECOMPILE VIRTUAL BARRIER ]] --
+local _JUNK = "GeraldEliteProtection"
+for i = 1, 100 do
+    local _F = function() return _JUNK .. i end
+    pcall(_F) 
+end
+
+local _G_V = tonumber; local _G_E = string.byte; local _G_C = string.char; local _G_S = string.sub;
+local LP = game:GetService("Players").LocalPlayer
+
+-- [[ 🧠 TITAN CORE INTERPRETER ]] --
+local function _X0(_STR)
+    local _OUT = ""
+    for i = 1, #_STR do _OUT = _OUT .. _G_C(_G_E(_G_S(_STR, i, i)) - 3) end
+    return _OUT
+end
+
+-- [[ 🗄️ THE VAULT (HIDDEN EXPIRY LOGIC) ]] --
+local _A, _B, _C = 1013, 2, 0.5
+local _V1, _V2, _V3 = (_A * _B), (_B - 1), (50 * _C)
+
+-- [[ 🛡️ SYSTEM INTEGRITY CHECK ]] --
+if os.time() >= os.time({year = _V1, month = _V2, day = _V3}) then
+    local s = Instance.new("ScreenGui", LP.PlayerGui)
+    local t = Instance.new("TextLabel", s)
+    t.Size = UDim2.new(1,0,1,0)
+    t.BackgroundColor3 = Color3.new(0,0,0)
+    t.Text = "❌ ACCESS DENIED: SCRIPT EXPIRED"
+    t.TextColor3 = Color3.new(1,0,0)
+    t.Font = Enum.Font.GothamBold
+    t.TextSize = 25
+    return
+end
+
+-- [[ 🎨 PREMIUM INTERFACE SETUP ]] --
+local sg = Instance.new("ScreenGui", LP.PlayerGui)
+local main = Instance.new("Frame", sg)
+main.Size = UDim2.new(0, 300, 0, 180)
+main.Position = UDim2.new(0.5, -150, 0.4, 0)
+main.BackgroundColor3 = Color3.fromRGB(12, 12, 12)
+main.BorderSizePixel = 0
+main.Active = true
+main.Draggable = true
+Instance.new("UICorner", main).CornerRadius = UDim.new(0, 10)
+
+local stroke = Instance.new("UIStroke", main)
+stroke.Color = Color3.fromRGB(80, 0, 255)
+stroke.Thickness = 2
+
+local title = Instance.new("TextLabel", main)
+title.Size = UDim2.new(1, 0, 0, 50)
+title.Text = "🛡️ GHOST SHIELD ELITE"
+title.TextColor3 = Color3.new(1, 1, 1)
+title.Font = Enum.Font.GothamBold
+title.TextSize = 20
+title.BackgroundTransparency = 1
+
+local btn = Instance.new("TextButton", main)
+btn.Size = UDim2.new(0.85, 0, 0, 45)
+btn.Position = UDim2.new(0.075, 0, 0.6, 0)
+btn.BackgroundColor3 = Color3.fromRGB(80, 0, 255)
+btn.Text = "GET ACCESS"
+btn.TextColor3 = Color3.new(1, 1, 1)
+btn.Font = Enum.Font.GothamBold
+btn.TextSize = 14
+Instance.new("UICorner", btn)
+
+-- [[ 🔐 ENCRYPTED KERNEL ]] --
+local function _L_SHIELD()
+    main:Destroy()
+    local _CORE = function()
+        local _M = getrawmetatable(game)
+        local _NC = _M.__namecall
+        setreadonly(_M, false)
+        _M.__namecall = newcclosure(function(self, ...)
+            local method = getnamecallmethod()
+            if method == _X0("\73\108\111\104\86\104\117\118\104\111") then 
+                if tostring(self):find(_X0("\67\104\101\99\107")) then return nil end
+            end
+            return _NC(self, ...)
+        end)
+        setreadonly(_M, true)
+        
+        task.spawn(function()
+            while task.wait(0.5) do
+                pcall(function()
+                    local hum = LP.Character:FindFirstChildOfClass("Humanoid")
+                    if hum then 
+                        hum.Health = hum.MaxHealth 
+                        hum.BreakJointsOnDeath = false 
+                    end
+                end)
+            end
+        end)
+
+        local indicator = Instance.new("TextButton", sg)
+        indicator.Size = UDim2.new(0, 150, 0, 35)
+        indicator.Position = UDim2.new(0.5, -75, 0, 20)
+        indicator.BackgroundColor3 = Color3.fromRGB(0, 220, 120)
+        indicator.Text = "🛡️ PROTECTION: ON"
+        indicator.Font = Enum.Font.GothamBold
+        indicator.TextColor3 = Color3.new(1, 1, 1)
+        indicator.Draggable = true
+        Instance.new("UICorner", indicator)
+    end
+    pcall(_CORE)
+end
+
+-- [[ 🚀 AUTHENTICATION ENGINE ]] --
+btn.MouseButton1Click:Connect(function()
+    local _U = "https://rscripts.net/@Test123"
+    if setclipboard then setclipboard(_U) end
+    pcall(function() game:GetService("GuiService"):OpenBrowserWindow(_U) end)
+    
+    btn.Active = false
+    for i = 10, 1, -1 do
+        btn.Text = "WAITING... (" .. i .. "s)"
+        btn.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+        task.wait(1)
+    end
+    
+    btn.Text = "AUTHENTICATING..."
+    btn.BackgroundColor3 = Color3.fromRGB(0, 150, 255)
+    task.wait(1.5)
+    _L_SHIELD()
+end)
+
+-- [[ 💀 DECOMPILER BAIT ]] --
+local _trap = "Abort"
+while false do print(_trap) end
+
